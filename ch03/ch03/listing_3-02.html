@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Intro To React</title>
+    <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script>
+
+      function start() {
+        const topMostComponent =
+          React.createElement("div", { },
+            React.createElement("h1", { }, "Bookmarks"),
+            React.createElement("ul", { },
+              React.createElement("li", { },
+                React.createElement("h2", { }, "Etherient"),
+                React.createElement("a", { href : "https://www.etherient.com" }, "The home page of Etherient")
+              ),
+              React.createElement("li", { },
+                React.createElement("h2", { }, "Frank's Home"),
+                React.createElement("a", { href: "https://www.zammetti.com" }, "The web home page of Frank Zammetti")
+              )
+            )
+          );
+        const root = ReactDOM.createRoot(document.getElementById("mainContainer"));
+        root.render(topMostComponent);
+      }
+
+    </script>
+  </head>
+  <body onLoad="start();">
+    <div id="mainContainer"></div>
+  </body>
+</html>
